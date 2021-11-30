@@ -1,0 +1,14 @@
+#text-form{
+  display: flex;
+  flex-direction: column;
+}
+#container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: auto;
+}
+#title {
+  max-width: 450px;
+}

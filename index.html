@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Transcrição de áudios</title>
+  </head>
+  <body>
+    <div id="container">
+      <form
+        id="file-form"
+        method="POST"
+        enctype="multipart/form-data"
+        action="http://127.0.0.1:5000/transcribe"
+      >
+        <input type="file" name="myfile" />
+        <input type="submit" />
+      </form>
+      <section>
+        <h1 id="title">Hello world</h1>
+        <form
+          id="text-form"
+          method="POST"
+          enctype="text/plain"
+          action="http://127.0.0.1:5000/translate"
+        >
+          <textarea type="textarea" name="texto" cols="40" rows="5"></textarea>
+          <input type="submit" />
+        </form>
+      </section>
+    </div>
+    <script>
+      function TranslatedText() {
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        if (params.answer != undefined) {
+          document.getElementById("title").innerText = params.translated;
+        }
+      }
+      TranslatedText();
+    </script>
+  </body>
+</html>
