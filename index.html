@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Transcrição de áudios</title>
+    <title>Transcribe and Translate</title>
   </head>
   <body>
     <div id="container">
@@ -19,7 +19,7 @@
         <input type="submit" />
       </form>
       <section>
-        <h1 id="title">Hello world</h1>
+        <h1 id="title">Insira a mensagem no campo abaixo</h1>
         <form
           id="text-form"
           method="POST"
@@ -35,7 +35,7 @@
       function TranslatedText() {
         const urlSearchParams = new URLSearchParams(window.location.search);
         const params = Object.fromEntries(urlSearchParams.entries());
-        if (params.answer != undefined) {
+        if (params.translated != undefined) {
           document.getElementById("title").innerText = params.translated;
         }
       }
